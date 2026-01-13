@@ -24,26 +24,27 @@ public class HotspotTapReveal : MonoBehaviour
         baseScale = targetToPop.localScale;
     }
 
-    void Update()
+    // void Update()
+    // {
+    //     if (Input.touchCount == 0) return;
+
+    //     Touch t = Input.GetTouch(0);
+    //     if (t.phase != TouchPhase.Began) return;
+
+    //     Ray ray = arCamera.ScreenPointToRay(t.position);
+    //     if (Physics.Raycast(ray, out RaycastHit hit))
+    //     {
+    //         // Only trigger if we tapped the hotspot (or its child)
+    //         if (hotspotCollider != null && (hit.collider == hotspotCollider))
+    //         {
+    //             ToggleReveal();
+    //         }
+    //     }
+    // }
+
+    public void ToggleReveal()
     {
-        if (Input.touchCount == 0) return;
-
-        Touch t = Input.GetTouch(0);
-        if (t.phase != TouchPhase.Began) return;
-
-        Ray ray = arCamera.ScreenPointToRay(t.position);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            // Only trigger if we tapped the hotspot (or its child)
-            if (hotspotCollider != null && (hit.collider == hotspotCollider))
-            {
-                ToggleReveal();
-            }
-        }
-    }
-
-    void ToggleReveal()
-    {
+        Debug.Log ("toggle reveal");
         revealed = !revealed;
 
         // Particles
