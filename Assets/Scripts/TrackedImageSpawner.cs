@@ -41,11 +41,11 @@ public class TrackedImageSpawner : MonoBehaviour
             spawned.Add(key, go);
         }
 
-        bool isTracking = img.trackingState == TrackingState.Tracking;
-        spawned[key].SetActive(isTracking);
+        bool shouldShow = img.trackingState != TrackingState.None;
+        spawned[key].SetActive(shouldShow);
 
-        // Keep aligned 
-        spawned[key].transform.SetPositionAndRotation(img.transform.position, img.transform.rotation);
+
+        
     }
 
     private void RemoveImage(ARTrackedImage img)

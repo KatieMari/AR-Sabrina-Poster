@@ -25,7 +25,7 @@ public class TapToReveal : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(t.position);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            // Did we tap THIS object (or a child)?
+            
             if (hit.transform == transform || hit.transform.IsChildOf(transform))
             {
                 ToggleReveal();

@@ -3,18 +3,23 @@ using UnityEngine;
 public class HotspotTapReveal : MonoBehaviour
 {
     [Header("Assign in Inspector")]
-    public Camera arCamera;                 // AR Camera
-    public Collider hotspotCollider;         // Hotspot_TapToReveal collider
-    public ParticleSystem revealParticles;   // Heart/sparkle particles
-    public Transform targetToPop;            // Text (optional)
-    public AudioSource musicSource;          // AudioSource on ARPosterContent
+    public Camera arCamera;                 
+    public Collider hotspotCollider;         
+    public ParticleSystem revealParticles;  
+    public Transform targetToPop;            
+    public AudioSource musicSource;  
+    
+        
 
     [Header("Tuning")]
-    public float popScale = 1.2f;
-    public float popDuration = 0.12f;
+    public float popScale = 1.12f;
+    public float popDuration = 0.18f;
 
     private Vector3 baseScale;
     private bool revealed = false;
+
+    
+
 
     void Start()
     {
@@ -22,6 +27,8 @@ public class HotspotTapReveal : MonoBehaviour
         if (targetToPop == null) targetToPop = transform;
 
         baseScale = targetToPop.localScale;
+        
+
     }
 
     // void Update()
@@ -75,6 +82,8 @@ public class HotspotTapReveal : MonoBehaviour
         {
             t += Time.deltaTime;
             targetToPop.localScale = Vector3.Lerp(baseScale, big, t / popDuration);
+            
+
             yield return null;
         }
 
@@ -83,6 +92,8 @@ public class HotspotTapReveal : MonoBehaviour
         {
             t += Time.deltaTime;
             targetToPop.localScale = Vector3.Lerp(big, baseScale, t / popDuration);
+            
+
             yield return null;
         }
 
