@@ -56,7 +56,7 @@ public class FadeInCanvas : MonoBehaviour
         canvasGroup.blocksRaycasts = false;
         canvasGroup.interactable = false;
 
-        // Optional: fully disable the panel
+        
         gameObject.SetActive(false);
     }
 }

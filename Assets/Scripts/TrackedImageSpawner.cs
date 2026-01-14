@@ -44,7 +44,7 @@ public class TrackedImageSpawner : MonoBehaviour
         bool isTracking = img.trackingState == TrackingState.Tracking;
         spawned[key].SetActive(isTracking);
 
-        // Keep aligned (extra safety)
+        // Keep aligned 
         spawned[key].transform.SetPositionAndRotation(img.transform.position, img.transform.rotation);
     }
 
