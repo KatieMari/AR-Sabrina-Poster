@@ -3,11 +3,11 @@ using UnityEngine;
 public class HotspotTapReveal : MonoBehaviour
 {
     [Header("Assign in Inspector")]
-    public Camera arCamera;                 // AR Camera
-    public Collider hotspotCollider;         // Hotspot_TapToReveal collider
-    public ParticleSystem revealParticles;   // Heart/sparkle particles
-    public Transform targetToPop;            // Text (optional)
-    public AudioSource musicSource;          // AudioSource on ARPosterContent
+    public Camera arCamera;                
+    public Collider hotspotCollider;         
+    public ParticleSystem revealParticles;  
+    public Transform targetToPop;            
+    public AudioSource musicSource;          
 
     [Header("Tuning")]
     public float popScale = 1.2f;
